@@ -469,7 +469,7 @@
             "steppedLine": false,
             "targets": [
                {
-                  "expr": "increase(kube_pod_container_status_restarts_total{cluster=\"$cluster\", namespace=\"$namespace\"}[10m]) > 0",
+                  "expr": "increase(kube_pod_container_status_restarts_total{namespace=\"$namespace\"}[10m]) > 0",
                   "hide": false,
                   "interval": "",
                   "legendFormat": "{{container}}-{{pod}}",
@@ -1800,7 +1800,7 @@
                   "steppedLine": false,
                   "targets": [
                      {
-                        "expr": "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"(loki|enterprise-logs)-write.*\"}",
+                        "expr": "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{namespace=\"$namespace\", pod=~\"(loki|enterprise-logs)-write.*\"}",
                         "intervalFactor": 3,
                         "legendFormat": "{{pod}}-{{container}}",
                         "refId": "A"
@@ -3007,7 +3007,7 @@
                   "steppedLine": false,
                   "targets": [
                      {
-                        "expr": "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"(loki|enterprise-logs)-read.*\"}",
+                        "expr": "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{namespace=\"$namespace\", pod=~\"(loki|enterprise-logs)-read.*\"}",
                         "intervalFactor": 3,
                         "legendFormat": "{{pod}}-{{container}}",
                         "refId": "A"
